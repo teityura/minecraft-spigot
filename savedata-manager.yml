@@ -1,0 +1,29 @@
+# > condition: service_completed_successfully
+# Require docker-compose version 1.29.2
+# Run this command to download the current stable release of Docker Compose
+# https://docs.docker.com/compose/install/
+
+version: '3'
+
+services:
+  savedata-manager:
+    build:
+      context: ./savedata-manager
+    image: minecraft-spigot/savedata-manager
+    volumes:
+      - ./savedata-manager/docker-entrypoint.sh:/docker-entrypoint.sh
+      - ./savedata-manager/docker-entrypoint.d:/docker-entrypoint.d
+      - ./savedata-manager/savedata-archives:/savedata-archives
+      - ./minecraft-server/server-contents:/var/server-contents
+
+  minecraft-server:
+    depends_on:
+      savedata-manager:
+        condition: service_completed_successfully
+    image: minecraft-spigot/minecraft-server:${SPIGOT_VER}
+    command: ${XMS_SIZE} ${XMX_SIZE}
+    ports:
+      - "${HOST_PORT}:25565"
+      - "${DYN_PORT}:8123"
+    volumes:
+      - ./minecraft-server/server-contents:/var/server-contents
