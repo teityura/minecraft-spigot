@@ -1,0 +1,31 @@
+# > condition: service_completed_successfully
+# Require docker-compose version 1.29.2
+# Run this command to download the current stable release of Docker Compose
+# https://docs.docker.com/compose/install/
+
+version: '3'
+
+services:
+  plugins-downloader:
+    build:
+      context: ./plugins-downloader
+    image: minecraft-spigot/plugins-downloader
+    volumes:
+      - ./plugins-downloader/plugins.csv:/plugins.csv
+      - ./minecraft-server/server-contents/plugins:/plugins
+
+  minecraft-server:
+    depends_on:
+      plugins-downloader:
+        condition: service_completed_successfully
+    build:
+      context: ./minecraft-server
+      args:
+        SPIGOT_VER: ${SPIGOT_VER}
+    image: minecraft-spigot/minecraft-server:${SPIGOT_VER}
+    command: ${XMS_SIZE} ${XMX_SIZE}
+    ports:
+      - "${HOST_PORT}:25565"
+      - "${DYN_PORT}:8123"
+    volumes:
+      - ./minecraft-server/server-contents:/var/server-contents
