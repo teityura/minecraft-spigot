@@ -10,7 +10,7 @@ RUN set -x && \
   java -jar BuildTools.jar -rev $SPIGOT_VER && \
   mv spigot-${SPIGOT_VER}.jar spigot.jar
 
-FROM openjdk:8-jre-alpine AS minecraft-server
+FROM openjdk:16-jdk-alpine AS minecraft-server
 
 EXPOSE 25565
 

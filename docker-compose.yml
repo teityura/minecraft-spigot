@@ -26,6 +26,7 @@ services:
     command: ${XMS_SIZE} ${XMX_SIZE}
     ports:
       - "${HOST_PORT}:25565"
+      - "${GEYSER_PORT}:19132/udp"
       - "${DYN_PORT}:8123"
     volumes:
       - ./minecraft-server/server-contents:/var/server-contents

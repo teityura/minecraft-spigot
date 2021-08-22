@@ -1,5 +1,8 @@
 project_url,plugin_url,plugin_name
-https://dev.bukkit.org/projects/dynmap,https://media.forgecdn.net/files/3242/277/Dynmap-3.1-spigot.jar,Dynmap-3.1-spigot.jar
-https://dev.bukkit.org/projects/serverminimap,https://media.forgecdn.net/files/3100/918/ServerMinimap.jar,ServerMinimap.jar
+https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/,https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/target/Geyser-Spigot.jar,Geyser-Spigot.jar
+https://ci.opencollab.dev//job/GeyserMC/job/Floodgate/job/master/,https://ci.opencollab.dev//job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/target/floodgate-spigot.jar,floodgate-spigot.jar
+https://dev.bukkit.org/projects/dynmap,https://media.forgecdn.net/files/3369/608/Dynmap-3.2-beta-2-spigot.jar,Dynmap-3.2-beta-2-spigot.jar
+https://dev.bukkit.org/projects/serverminimap,https://media.forgecdn.net/files/3363/164/ServerMinimap.jar,ServerMinimap.jar
 https://dev.bukkit.org/projects/server-login-message,https://media.forgecdn.net/files/2989/412/ServerLoginMessage-1.0.jar,ServerLoginMessage-1.0.jar
 https://dev.bukkit.org/projects/clicksort-lite,https://media.forgecdn.net/files/2672/536/ClickSortLite.jar,ClickSortLite.jar
+https://www.curseforge.com/minecraft/bukkit-plugins/tree-assist,https://media.forgecdn.net/files/3422/91/TreeAssist.jar,TreeAssist.jar
